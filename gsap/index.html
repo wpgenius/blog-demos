@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>How to add Parallax effect GSAP and Parallax ScrollMagic</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+	<style type="text/css">
+		body{
+			background-color: #ffffff;
+		}
+		.section{
+		    background-color:gray ;
+		    text-align: center;
+		    min-width: 555px;
+		    min-height: 350px;
+		}
+	</style>
+</head>
+<script type="text/javascript">
+	$(document).ready(function(){
+		var controller = new ScrollMagic.Controller();
+		$(".section").each(function() {
+		  var tl = new TimelineMax();
+		  var child = $(this).find(".canvas");
+		  tl.to(child, 0.9, { y: -200, ease: Linear.easeNone });
+
+		  var scene = new ScrollMagic.Scene({
+		    triggerElement: this,
+		    triggerHook: 0.3,
+		    duration: "100%"
+		  })
+		    .setTween(tl)
+		    .addTo(controller);
+		});
+	});
+</script>
+<body>
+	<div class="container">
+		<div style="min-height: 300px"></div>
+		<div class="row">
+			<div class="col-md-6 col-sm-6">
+				<div class="section"><img src="Group-285.png" class="canvas"></div>
+			</div>
+			<div class="col-md-6 col-sm-6">
+				<div class="section"><img src="Group-183.png" class="canvas"></div>
+			</div>
+		</div>
+		<div style="min-height:100px"></div>
+		<div class="row">
+			<div class="col-md-6 col-sm-6">
+				<div class="section"><img src="Group-203.png" class="canvas"></div>
+			</div>
+			<div class="col-md-6 col-sm-6">
+				<div class="section"><img src="Group-267.png" class="canvas"></div>
+			</div>
+		</div>
+		<div style="min-height: 300px"></div>
+	</div>
+</body>
+</html>
