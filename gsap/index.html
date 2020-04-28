@@ -3,22 +3,12 @@
 <head>
 	<title>How to add Parallax effect GSAP and Parallax ScrollMagic</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
-	<style type="text/css">
-		body{
-			background-color: #ffffff;
-		}
-		.section{
-		    background-color:gray ;
-		    text-align: center;
-		    min-width: 555px;
-		    min-height: 350px;
-		}
-	</style>
 </head>
 <script type="text/javascript">
 	$(document).ready(function(){
@@ -26,11 +16,11 @@
 		$(".section").each(function() {
 		  var tl = new TimelineMax();
 		  var child = $(this).find(".canvas");
-		  tl.to(child, 0.9, { y: -200, ease: Linear.easeNone });
+		  tl.to(child, 0.9, { y: -300, ease: Linear.easeNone });
 
 		  var scene = new ScrollMagic.Scene({
 		    triggerElement: this,
-		    triggerHook: 0.3,
+		    triggerHook: 0.5,
 		    duration: "100%"
 		  })
 		    .setTween(tl)
@@ -38,27 +28,39 @@
 		});
 	});
 </script>
-<body>
-	<div class="container">
-		<div style="min-height: 300px"></div>
-		<div class="row">
-			<div class="col-md-6 col-sm-6">
-				<div class="section"><img src="Group-285.png" class="canvas"></div>
+<body class="bg">
+	<div>
+		<div class="heading">
+			<h2>Parallax effect using GSAP and Parallax ScrollMagic</h2>
+		</div>
+		<div class="row " style="min-height: 300px;">
+			<div class="col-md-6 col-sm-6 row1">
+				<div class="section"><img src="images/img7.png" class="canvas"></div>
 			</div>
-			<div class="col-md-6 col-sm-6">
-				<div class="section"><img src="Group-183.png" class="canvas"></div>
+			<div class="col-md-6 col-sm-6 row1">
+				<div class="section"><img src="images/img6.png" class="canvas"></div>
 			</div>
 		</div>
-		<div style="min-height:100px"></div>
-		<div class="row">
-			<div class="col-md-6 col-sm-6">
-				<div class="section"><img src="Group-203.png" class="canvas"></div>
+		<div class="space"></div>
+		<div class="row ">
+			<div class="col-md-6 col-sm-6 row2">
+				<div class="section"><img src="images/img3.png" class="canvas"></div>
 			</div>
-			<div class="col-md-6 col-sm-6">
-				<div class="section"><img src="Group-267.png" class="canvas"></div>
+			<div class="col-md-6 col-sm-6 row3">
+				<div class="section"><img src="images/img4.png" class="canvas"></div>
 			</div>
 		</div>
-		<div style="min-height: 300px"></div>
+		<div class="space"></div>
+		<div class="row ">
+			<div class="col-md-6 col-sm-6 row2">
+				<div class="section"><img src="images/img9.png" class="canvas"></div>
+			</div>
+			<div class="col-md-6 col-sm-6 row3">
+				<div class="section"><img src="images/img8.png" class="canvas"></div>
+			</div>
+		</div>
+		<div class="space"></div>
+		<div class="space"></div>		
 	</div>
 </body>
 </html>

@@ -1,0 +1,18 @@
+.bg {
+    background-image: url('images/bc.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.heading{
+	min-height: 600px; 
+	text-align: center;
+	color: #ffffff;
+	padding-top: 113px;
+}
+.row {
+    text-align: center;
+}
+.space{
+	min-height: 300px;
+}
