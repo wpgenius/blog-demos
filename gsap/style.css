@@ -16,3 +16,9 @@
 .space{
 	min-height: 300px;
 }
+.margin{
+	padding-top:155px;
+}
+.heading h2 {
+    font-size: 42px !important;
+}
